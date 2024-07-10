@@ -17,7 +17,7 @@ public class EmailConsumer {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @KafkaListener(topics = "sendUserSignUpEmail", id = "signUpEmailConsumerGroup")
+    @KafkaListener(topics = "sendEshopEmail", id = "eshopEmailConsumerGroup")
     public void sendEmailForUserSignUp(String message){
         EmailFormatDto emailMessage = null;
         try {
@@ -33,7 +33,7 @@ public class EmailConsumer {
     private void sendActualEmail(EmailFormatDto emailMessage) {
 
         /*
-          SMTP -> Simple Mail Transfer Protocal
+          SMTP -> Simple Mail Transfer Protocol
          */
 
         final String fromEmail = "notify.eshop@gmail.com"; //requires valid gmail id
